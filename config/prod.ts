@@ -7,7 +7,6 @@ export default {
         drop_console: true,
         drop_debugger: true,
       },
-      maxWorkers: 4,
     },
   },
   mini: {},
