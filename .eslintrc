@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "taro/react",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "quotes": ["error", "single"],
+    // 禁止在未使用的变量前使用下划线：
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ],
+    "no-unused-vars": "error"
+  }
+}
