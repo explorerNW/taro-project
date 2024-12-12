@@ -1,20 +1,21 @@
-import { View, Text } from '@tarojs/components';
-import { useLoad, navigateTo } from '@tarojs/taro';
+import { useLoad } from '@tarojs/taro';
+
+import { Provider } from 'react-redux';
+import store from '@/redux';
+import { routes, RouterProvider, Links } from '@/router';
+
 import './index.scss';
 
 export default function Index() {
   useLoad(() => {
-    console.log('Page loaded.');
+    console.log('Index Page loaded.');
   });
 
-  const handler = () => {
-    navigateTo({ url: '/pages/details/index' });
-  };
-
   return (
-    <View className='index'>
-      <Text>Hello world!</Text>
-      <Text onClick={handler}>详情页</Text>
-    </View>
+    <Provider store={store}>
+      <RouterProvider route={routes()}>
+        <Links />
+      </RouterProvider>
+    </Provider>
   );
 }

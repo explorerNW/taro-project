@@ -1,5 +1,11 @@
 export default defineAppConfig({
-  pages: ['pages/index/index', 'pages/details/index'],
+  pages: ['pages/index/index', 'pages/home/index', 'pages/details/index'],
+
+  lazyCodeLoading: 'requiredComponents',
+  miniApp: {
+    useAuthorizePage: true,
+  },
+  useDynamicPlugins: true,
 
   window: {
     backgroundTextStyle: 'light',

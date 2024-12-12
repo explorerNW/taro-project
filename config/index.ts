@@ -1,4 +1,5 @@
 import { defineConfig, type UserConfigExport } from '@tarojs/cli';
+import path from 'path';
 
 import devConfig from './dev';
 import prodConfig from './prod';
@@ -17,16 +18,22 @@ export default defineConfig<'vite'>(async merge => {
     },
     sourceRoot: 'src',
     outputRoot: 'dist',
-    plugins: [],
+    plugins: ['@tarojs/plugin-html', 'taro-plugin-tailwind'],
     defineConstants: {},
     copy: {
       patterns: [],
       options: {},
     },
+    alias: {
+      '@': path.resolve(__dirname, '..', 'src'),
+    },
     framework: 'react',
     compiler: 'vite',
     mini: {
       postcss: {
+        autoprefixer: {
+          enable: true,
+        },
         pxtransform: {
           enable: true,
           config: {},
@@ -64,7 +71,7 @@ export default defineConfig<'vite'>(async merge => {
       },
     },
     rn: {
-      appName: 'taroDemo',
+      appName: 'taro-react',
       postcss: {
         cssModules: {
           enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true

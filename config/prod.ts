@@ -2,6 +2,7 @@ import type { UserConfigExport } from '@tarojs/cli';
 
 export default {
   terser: {
+    enable: true,
     config: {
       compress: {
         drop_console: true,
